@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Point d'entrée principal pour l'exécutable autotest-ia
+# Lance l'interface CLI en utilisant Thor
+
+require_relative "../lib/autotest/ia"
+
+# Lance la CLI
+Autotest::Agent::CLI.start(ARGV) 
