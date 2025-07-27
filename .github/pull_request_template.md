@@ -122,7 +122,7 @@ bundle exec rspec
 ### Intégration
 - [ ] Testé avec l'app dummy
 - [ ] Compatible Rails 7.0+
-- [ ] Compatible Ruby 3.0+
+- [ ] Compatible Ruby 3.2+
 - [ ] Pas de nouvelles dépendances non justifiées
 
 ## 🧐 Review Focus

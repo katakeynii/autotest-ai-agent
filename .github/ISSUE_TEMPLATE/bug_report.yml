@@ -71,8 +71,6 @@ body:
       label: 💎 Version Ruby
       description: Quelle version de Ruby utilisez-vous ?
       options:
-        - Ruby 3.0.x
-        - Ruby 3.1.x
         - Ruby 3.2.x
         - Ruby 3.3.x
         - Autre (préciser dans le contexte)

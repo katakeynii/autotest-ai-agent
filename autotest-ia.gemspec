@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "An intelligent gem that uses AI to automatically generate, update, and execute tests in Rails applications. Supports RSpec and Minitest with real-time file watching and AI-powered test generation."
   spec.homepage = "https://github.com/username/autotest-ia"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.required_ruby_version = ">= 3.2.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
   spec.metadata["homepage_uri"] = spec.homepage

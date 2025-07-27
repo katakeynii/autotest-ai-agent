@@ -48,7 +48,7 @@ Nous accueillons différents types de contributions :
 
 ### Prérequis
 
-- **Ruby** 3.0+ 
+- **Ruby** 3.2+ 
 - **Rails** 7.0+ (pour les tests)
 - **Git**
 - Clé API OpenAI (pour les tests complets)

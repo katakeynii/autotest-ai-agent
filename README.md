@@ -2,7 +2,7 @@
 
 [![Coverage Status](https://img.shields.io/badge/coverage-91.04%25-green.svg)](coverage/index.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
-[![Ruby Version](https://img.shields.io/badge/Ruby-3.0+-red.svg)](https://www.ruby-lang.org/)
+[![Ruby Version](https://img.shields.io/badge/Ruby-3.2+-red.svg)](https://www.ruby-lang.org/)
 [![CI Status](https://github.com/username/autotest-ia/workflows/🧪%20CI%20-%20Autotest%20IA/badge.svg)](https://github.com/username/autotest-ia/actions)
 [![Made in Senegal](https://img.shields.io/badge/Made%20in-Senegal%20🇸🇳-green.svg)](https://www.senegal.sn/)
 
