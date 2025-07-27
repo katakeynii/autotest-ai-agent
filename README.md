@@ -29,7 +29,7 @@
 Ce projet a été développé au **Sénégal** 🇸🇳 avec pour mission d'améliorer la productivité des développeurs Ruby/Rails en automatisant l'écriture de tests grâce à l'intelligence artificielle.
 
 **Auteur** : Mohamed Camara GUEYE - Développeur passionné basé au Sénégal  
-**Vision** : Démocratiser l'utilisation de l'IA dans le développement logiciel pour la communauté africaine et mondiale
+**Vision** : Démocratiser l'utilisation de l'IA dans le développement logiciel pour la communauté africaine
 
 
 ## 🚀 Installation
