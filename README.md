@@ -16,13 +16,13 @@
 
 ## ✨ Fonctionnalités
 
-🔥 **Génération automatique de tests** : L'IA analyse votre code et génère des tests RSpec/Minitest intelligents
-🔍 **Surveillance en temps réel** : Détecte automatiquement les changements de fichiers et génère les tests correspondants
-🧠 **Context métier intelligent** : Interface interactive pour enrichir le contexte métier et générer des tests plus pertinents
-📊 **Rapports détaillés** : Analyse de couverture, qualité du code, tendances et suggestions d'amélioration
-⚡ **Exécution automatique** : Lance les tests après génération avec feedback immédiat
-🔧 **Configuration flexible** : Support OpenAI, Ollama, personnalisation des prompts et frameworks
-🎯 **Interface CLI moderne** : Commandes intuitives avec mode interactif complet
+- 🔥 **Génération automatique de tests** : L'IA analyse votre code et génère des tests RSpec/Minitest intelligents
+- 🔍 **Surveillance en temps réel** : Détecte automatiquement les changements de fichiers et génère les tests correspondants
+- 🧠 **Context métier intelligent** : Interface interactive pour enrichir le contexte métier et générer des tests plus pertinents
+- 📊 **Rapports détaillés** : Analyse de couverture, qualité du code, tendances et suggestions d'amélioration
+- ⚡ **Exécution automatique** : Lance les tests après génération avec feedback immédiat
+- 🔧 **Configuration flexible** : Support OpenAI, Ollama, personnalisation des prompts et frameworks
+- 🎯 **Interface CLI moderne** : Commandes intuitives avec mode interactif complet
 
 ## 🇸🇳 À propos
 
