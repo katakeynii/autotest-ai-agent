@@ -24,6 +24,14 @@
 🔧 **Configuration flexible** : Support OpenAI, Ollama, personnalisation des prompts et frameworks
 🎯 **Interface CLI moderne** : Commandes intuitives avec mode interactif complet
 
+## 🇸🇳 À propos
+
+Ce projet a été développé au **Sénégal** 🇸🇳 avec pour mission d'améliorer la productivité des développeurs Ruby/Rails en automatisant l'écriture de tests grâce à l'intelligence artificielle.
+
+**Auteur** : Mohamed Camara GUEYE - Développeur passionné basé au Sénégal  
+**Vision** : Démocratiser l'utilisation de l'IA dans le développement logiciel pour la communauté africaine et mondiale
+
+
 ## 🚀 Installation
 
 Ajoutez cette ligne au `Gemfile` de votre application :
@@ -488,12 +496,6 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE.txt](LICENSE.txt) pour 
 - [SimpleCov](https://github.com/simplecov-ruby/simplecov) pour la couverture
 - La communauté Ruby/Rails pour l'inspiration
 
-## 🇸🇳 À propos
-
-Ce projet a été développé au **Sénégal** 🇸🇳 avec pour mission d'améliorer la productivité des développeurs Ruby/Rails en automatisant l'écriture de tests grâce à l'intelligence artificielle.
-
-**Auteur** : Mohamed Camara GUEYE - Développeur passionné basé au Sénégal  
-**Vision** : Démocratiser l'utilisation de l'IA dans le développement logiciel pour la communauté africaine et mondiale
 
 ---
 
