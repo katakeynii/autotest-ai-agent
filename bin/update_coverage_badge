@@ -1,0 +1,112 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'json'
+
+# Script pour mettre à jour automatiquement le badge de couverture dans le README
+
+def extract_coverage_percentage
+  coverage_file = File.join(__dir__, '..', 'coverage', '.resultset.json')
+  
+  unless File.exist?(coverage_file)
+    puts "❌ Fichier de couverture non trouvé. Exécutez d'abord 'bundle exec rspec'"
+    exit 1
+  end
+
+  data = JSON.parse(File.read(coverage_file))
+  result = data['RSpec']
+  
+  if result && result['coverage']
+    covered_lines = 0
+    total_lines = 0
+    
+    result['coverage'].each do |file, file_data|
+      if file_data['lines'].is_a?(Array)
+        file_data['lines'].each do |line_coverage|
+          if line_coverage.is_a?(Integer)
+            total_lines += 1
+            covered_lines += 1 if line_coverage > 0
+          end
+        end
+      end
+    end
+    
+    if total_lines > 0
+      percentage = (covered_lines.to_f / total_lines * 100).round(2)
+      return percentage
+    end
+  end
+  
+  nil
+rescue JSON::ParserError => e
+  puts "❌ Erreur lors de la lecture du fichier de couverture: #{e.message}"
+  exit 1
+end
+
+def update_readme_badge(percentage)
+  readme_path = File.join(__dir__, '..', 'README.md')
+  
+  unless File.exist?(readme_path)
+    puts "❌ Fichier README.md non trouvé"
+    exit 1
+  end
+
+  content = File.read(readme_path)
+  
+  # Pattern pour trouver le badge de couverture
+  badge_pattern = /\[\!\[Coverage Status\]\(https:\/\/img\.shields\.io\/badge\/coverage-[\d.]+%25-[a-z]+\.svg\)\]/
+  
+  # Déterminer la couleur selon le pourcentage
+  color = case percentage
+          when 0...50 then 'red'
+          when 50...70 then 'orange'
+          when 70...80 then 'yellow'
+          when 80...90 then 'yellowgreen'
+          else 'green'
+          end
+  
+  # Nouveau badge
+  new_badge = "[![Coverage Status](https://img.shields.io/badge/coverage-#{percentage}%25-#{color}.svg)](coverage/index.html)"
+  
+  if content.match?(badge_pattern)
+    # Remplacer le badge existant
+    updated_content = content.gsub(badge_pattern, new_badge)
+    File.write(readme_path, updated_content)
+    puts "✅ Badge de couverture mis à jour: #{percentage}%"
+  else
+    puts "❌ Badge de couverture non trouvé dans le README"
+    exit 1
+  end
+end
+
+def update_coverage_table(percentage)
+  readme_path = File.join(__dir__, '..', 'README.md')
+  content = File.read(readme_path)
+  
+  # Pattern pour la ligne global dans le tableau
+  table_pattern = /\| \*\*Global\*\* \| \*\*> 90%\*\* \| \*\*[^|]+\*\* \|/
+  
+  status_emoji = percentage >= 90 ? "✅ #{percentage}%" : "⚠️ #{percentage}%"
+  new_table_line = "| **Global** | **> 90%** | **#{status_emoji}** |"
+  
+  if content.match?(table_pattern)
+    updated_content = content.gsub(table_pattern, new_table_line)
+    File.write(readme_path, updated_content)
+    puts "✅ Tableau de couverture mis à jour"
+  end
+end
+
+# Exécution principale
+puts "🔍 Extraction de la couverture depuis SimpleCov..."
+
+coverage = extract_coverage_percentage
+
+if coverage
+  puts "📊 Couverture détectée: #{coverage}%"
+  update_readme_badge(coverage)
+  update_coverage_table(coverage)
+  puts "🎉 README mis à jour avec succès!"
+else
+  puts "❌ Impossible d'extraire la couverture"
+  exit 1
+end 

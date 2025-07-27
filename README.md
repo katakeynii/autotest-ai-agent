@@ -1,5 +1,9 @@
 # 🤖 Autotest IA
 
+[![Coverage Status](https://img.shields.io/badge/coverage-91.04%25-green.svg)](coverage/index.html)(coverage/index.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
+[![Ruby Version](https://img.shields.io/badge/Ruby-3.0+-red.svg)](https://www.ruby-lang.org/)
+
 **Automatisez la génération, mise à jour et exécution de tests Rails avec l'Intelligence Artificielle**
 
 `autotest-ia` est un gem innovant qui révolutionne l'écriture de tests dans vos applications Rails en exploitant la puissance de l'IA pour générer automatiquement des tests pertinents, maintenir la couverture de code et améliorer la qualité de vos projets.
@@ -33,6 +37,56 @@ Ou installez directement :
 ```bash
 $ gem install autotest-ia
 ```
+
+## 📊 Couverture des tests
+
+Ce projet maintient une couverture de tests élevée grâce à SimpleCov. La couverture actuelle est de **91.04%**.
+
+### Consulter le rapport de couverture
+
+Après avoir exécuté les tests, vous pouvez consulter le rapport détaillé :
+
+```bash
+# Exécuter les tests avec couverture
+bundle exec rspec
+
+# Ouvrir le rapport HTML (macOS)
+open coverage/index.html
+
+# Ouvrir le rapport HTML (Linux)
+xdg-open coverage/index.html
+```
+
+### Configuration de la couverture
+
+La configuration SimpleCov est définie dans `spec/spec_helper.rb` avec :
+- Seuil minimum de couverture : **80%**
+- Seuil minimum par fichier : **70%**
+- Exclusions : répertoires `spec/`, `vendor/`, `bin/`, etc.
+- Groupement par modules pour une analyse claire
+
+### Mise à jour automatique du badge
+
+Un script utilitaire permet de mettre à jour automatiquement le badge de couverture dans le README :
+
+```bash
+# Après exécution des tests
+./bin/update_coverage_badge
+```
+
+Ce script :
+- Extrait automatiquement le pourcentage de couverture depuis SimpleCov
+- Met à jour le badge avec la couleur appropriée (rouge < 50%, orange < 70%, jaune < 80%, vert foncé < 90%, vert >= 90%)
+- Met à jour le tableau de couverture avec le nouveau pourcentage
+
+### Objectifs de couverture
+
+| Composant          | Couverture cible | Status       |
+| ------------------ | ---------------- | ------------ |
+| Modèles principaux | > 95%            | ✅            |
+| CLI et interfaces  | > 85%            | ✅            |
+| Utilitaires        | > 90%            | ✅            |
+| **Global**         | **> 90%**        | **✅ 91.04%** |
 
 ## ⚙️ Configuration initiale
 

@@ -1,5 +1,28 @@
 # frozen_string_literal: true
 
+# Configuration SimpleCov pour la couverture des tests
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+  add_filter '/vendor/'
+  add_filter '/bin/'
+  add_filter '/exe/'
+  
+  add_group 'Models', 'lib/autotest/agent'
+  add_group 'Configuration', 'lib/autotest/agent/configuration.rb'
+  add_group 'Core', 'lib/autotest/ia.rb'
+  
+  # Exclusion des fichiers de version
+  add_filter 'version.rb'
+  
+  # Configuration du format
+  formatter SimpleCov::Formatter::HTMLFormatter
+  
+  # Seuil de couverture minimum
+  minimum_coverage 80
+  minimum_coverage_by_file 70
+end
+
 require "autotest/ia"
 require "fileutils"
 require "tmpdir"
