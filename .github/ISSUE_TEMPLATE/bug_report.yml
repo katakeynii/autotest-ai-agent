@@ -1,0 +1,113 @@
+name: 🐛 Bug Report
+description: Signaler un problème ou un dysfonctionnement
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🇸🇳 Merci de signaler ce bug !
+
+        Votre rapport nous aide à améliorer autotest-ia pour la communauté des développeurs Ruby/Rails.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: ✅ Prérequis
+      description: Veuillez confirmer que vous avez vérifié ces éléments
+      options:
+        - label: J'ai recherché dans les issues existantes
+          required: true
+        - label: J'ai lu la documentation
+          required: true
+        - label: J'utilise la dernière version du gem
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Description du problème
+      description: Décrivez clairement le problème rencontré
+      placeholder: |
+        Exemple : "Quand j'exécute `autotest-ia generate`, j'obtiens une erreur..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔄 Étapes pour reproduire
+      description: Listez les étapes exactes pour reproduire le bug
+      placeholder: |
+        1. Exécuter `autotest-ia init`
+        2. Configurer avec OpenAI
+        3. Lancer `autotest-ia generate app/models/user.rb`
+        4. Voir l'erreur
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ Comportement attendu
+      description: Que devrait-il se passer normalement ?
+      placeholder: Le test devrait être généré dans spec/models/user_spec.rb
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ Comportement actuel
+      description: Que se passe-t-il réellement ?
+      placeholder: L'erreur suivante apparaît...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ruby_version
+    attributes:
+      label: 💎 Version Ruby
+      description: Quelle version de Ruby utilisez-vous ?
+      options:
+        - Ruby 3.0.x
+        - Ruby 3.1.x
+        - Ruby 3.2.x
+        - Ruby 3.3.x
+        - Autre (préciser dans le contexte)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ai_provider
+    attributes:
+      label: 🤖 Provider IA
+      description: Quel provider IA utilisez-vous ?
+      options:
+        - OpenAI (GPT-3.5/GPT-4)
+        - Ollama (local)
+        - Autre
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 🌍 Contexte additionnel
+      description: Informations supplémentaires qui pourraient aider
+      placeholder: |
+        - Configuration système
+        - Autres gems utilisés
+        - Tentatives de résolution essayées
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **🇸🇳 Merci de contribuer à autotest-ia !** Votre rapport nous aide à améliorer l'innovation tech sénégalaise.
+
+        **Développé avec ❤️ au Sénégal**

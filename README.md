@@ -3,6 +3,7 @@
 [![Coverage Status](https://img.shields.io/badge/coverage-91.04%25-green.svg)](coverage/index.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
 [![Ruby Version](https://img.shields.io/badge/Ruby-3.0+-red.svg)](https://www.ruby-lang.org/)
+[![CI Status](https://github.com/username/autotest-ia/workflows/🧪%20CI%20-%20Autotest%20IA/badge.svg)](https://github.com/username/autotest-ia/actions)
 [![Made in Senegal](https://img.shields.io/badge/Made%20in-Senegal%20🇸🇳-green.svg)](https://www.senegal.sn/)
 
 [![LangChain](https://img.shields.io/badge/LangChain-0.19+-blue.svg)](https://rubygems.org/gems/langchainrb)
@@ -387,11 +388,38 @@ Les logs détaillés sont disponibles dans `tmp/autotest_ia.log`
 
 Les contributions sont les bienvenues ! Pour contribuer :
 
+1. **Lisez le [Guide de Contribution](CONTRIBUTING.md)** 📚
+2. **Choisissez le type de contribution :**
+   - 🐛 [Signaler un bug](https://github.com/username/autotest-ia/issues/new?template=bug_report.yml)
+   - ✨ [Proposer une fonctionnalité](https://github.com/username/autotest-ia/issues/new?template=feature_request.yml)
+   - 📚 Améliorer la documentation
+   - 🔧 Contribuer au code
+
+### Processus de contribution :
+
 1. Fork le projet
 2. Créez votre branche de fonctionnalité (`git checkout -b feature/amazing-feature`)
-3. Committez vos changements (`git commit -am 'Add amazing feature'`)
-4. Poussez vers la branche (`git push origin feature/amazing-feature`)
-5. Ouvrez une Pull Request
+3. Suivez les [standards de code](CONTRIBUTING.md#standards-de-code)
+4. Écrivez des tests pour votre code
+5. Committez vos changements (`git commit -am 'feat: add amazing feature'`)
+6. Poussez vers la branche (`git push origin feature/amazing-feature`)
+7. Ouvrez une Pull Request en utilisant notre [template](.github/pull_request_template.md)
+
+### Pour commencer :
+
+```bash
+git clone https://github.com/votre-username/autotest-ia.git
+cd autotest-ia
+bundle install
+bundle exec rspec  # Vérifier que tout fonctionne
+```
+
+### Besoin d'aide ?
+
+- 📖 [Documentation complète](README.md)
+- 🤝 [Guide de contribution](CONTRIBUTING.md)
+- 💬 [Discussions GitHub](https://github.com/username/autotest-ia/discussions)
+- 📧 Contact : mohamed-camara.gueye@free-partenaires.sn
 
 ### Développement local
 

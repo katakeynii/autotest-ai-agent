@@ -1,0 +1,145 @@
+name: ✨ Feature Request
+description: Proposer une nouvelle fonctionnalité ou amélioration
+title: "[Feature]: "
+labels: ["enhancement", "needs-discussion"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🇸🇳 Merci de proposer cette amélioration !
+
+        Vos idées nous aident à faire évoluer autotest-ia et à servir au mieux la communauté des développeurs.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: ✅ Prérequis
+      description: Veuillez confirmer que vous avez vérifié ces éléments
+      options:
+        - label: J'ai recherché dans les issues existantes
+          required: true
+        - label: Cette fonctionnalité n'existe pas encore
+          required: true
+        - label: J'ai réfléchi à l'impact sur l'architecture
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 🎯 Problème à résoudre
+      description: Quel problème cette fonctionnalité résoudrait-elle ?
+      placeholder: |
+        Exemple : "En tant que développeur Rails, j'aimerais que autotest-ia puisse générer des tests pour les jobs ActiveJob car..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 💡 Solution proposée
+      description: Décrivez votre idée de solution
+      placeholder: |
+        Exemple : "Ajouter une détection automatique des jobs dans app/jobs/ et générer des tests avec des mocks pour les services externes..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 📂 Catégorie
+      description: Dans quelle catégorie se situe cette fonctionnalité ?
+      options:
+        - Génération IA (nouveaux types de fichiers)
+        - Interface CLI (nouvelles commandes)
+        - Providers IA (nouveau provider)
+        - Surveillance de fichiers
+        - Rapports et analyses
+        - Configuration
+        - Performance
+        - Documentation
+        - Autre
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: ⚡ Priorité
+      description: Quelle est l'urgence de cette fonctionnalité ?
+      options:
+        - 🔥 Critique (bloque l'adoption)
+        - 📈 Importante (améliore significativement l'UX)
+        - 💡 Utile (nice to have)
+        - 🎨 Esthétique (amélioration visuelle)
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔄 Alternatives considérées
+      description: Avez-vous pensé à d'autres approches ?
+      placeholder: |
+        - Utiliser un gem existant comme X
+        - Configurer manuellement via Y
+        - Workaround actuel : Z
+    validations:
+      required: false
+
+  - type: textarea
+    id: use_cases
+    attributes:
+      label: 🎭 Cas d'usage
+      description: Donnez des exemples concrets d'utilisation
+      placeholder: |
+        Cas 1 : Développeur qui travaille sur une app e-commerce
+        Cas 2 : Équipe qui fait du TDD strict
+        Cas 3 : Projet legacy avec migration vers les tests
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: 🔧 Idées d'implémentation
+      description: Si vous avez des idées techniques, partagez-les
+      placeholder: |
+        - Modifier le FileWatcher pour détecter les jobs
+        - Ajouter des prompts spécifiques dans AIGenerator
+        - Créer de nouveaux templates de tests
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: 📊 Impact attendu
+      description: Quel serait l'impact de cette fonctionnalité ?
+      options:
+        - label: Améliore l'expérience utilisateur
+        - label: Augmente l'adoption du gem
+        - label: Résout un point de friction majeur
+        - label: Permet de nouveaux workflows
+        - label: Améliore les performances
+        - label: Facilite la maintenance
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: 🤝 Contribution
+      description: Seriez-vous prêt(e) à contribuer ?
+      options:
+        - label: Je peux aider à implémenter cette fonctionnalité
+        - label: Je peux aider à tester la fonctionnalité
+        - label: Je peux aider à documenter la fonctionnalité
+        - label: Je peux fournir des retours détaillés
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **🇸🇳 Merci de contribuer à l'innovation autotest-ia !** Vos idées nous aident à révolutionner l'écriture de tests avec l'IA.
+
+        **Ensemble, construisons l'avenir du développement au Sénégal et dans le monde ! 🌍**

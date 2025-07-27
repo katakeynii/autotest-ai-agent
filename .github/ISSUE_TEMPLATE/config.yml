@@ -1,0 +1,13 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions GitHub
+    url: https://github.com/username/autotest-ia/discussions
+    about: Pour les questions générales, idées et discussions ouvertes
+
+  - name: 📖 Documentation
+    url: https://github.com/username/autotest-ia#readme
+    about: Consultez la documentation complète et les exemples
+
+  - name: 📧 Contact Direct
+    url: mailto:mohamed-camara.gueye@free-partenaires.sn
+    about: Pour les questions privées ou collaborations (Développé au Sénégal 🇸🇳)
