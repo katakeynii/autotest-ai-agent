@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Script maître pour mettre à jour tous les badges du README
+
+puts "🚀 Mise à jour complète des badges autotest-ia"
+puts "=" * 50
+
+# 1. Mettre à jour le badge de couverture
+puts "\n📊 Étape 1: Mise à jour du badge de couverture"
+system("#{File.join(__dir__, 'update_coverage_badge')}")
+
+# 2. Vérifier les dépendances
+puts "\n🔍 Étape 2: Vérification des dépendances"
+system("#{File.join(__dir__, 'check_dependencies')}")
+
+puts "\n✅ Mise à jour complète terminée !"
+puts "\n📝 Actions recommandées :"
+puts "   • Vérifiez le README.md pour confirmer les changements"
+puts "   • Si des mises à jour de dépendances sont suggérées, considérez :"
+puts "     - Mettre à jour le gemspec avec les nouvelles versions"
+puts "     - Exécuter 'bundle update' pour tester la compatibilité"
+puts "     - Mettre à jour manuellement les badges de dépendances si nécessaire"
+puts "   • Commiter les changements: git add README.md && git commit -m 'Update badges'"
+
+puts "\n🇸🇳 Développé avec ❤️ au Sénégal" 

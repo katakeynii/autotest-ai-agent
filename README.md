@@ -1,8 +1,14 @@
 # 🤖 Autotest IA
 
-[![Coverage Status](https://img.shields.io/badge/coverage-91.04%25-green.svg)](coverage/index.html)(coverage/index.html)
+[![Coverage Status](https://img.shields.io/badge/coverage-91.04%25-green.svg)](coverage/index.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
 [![Ruby Version](https://img.shields.io/badge/Ruby-3.0+-red.svg)](https://www.ruby-lang.org/)
+[![Made in Senegal](https://img.shields.io/badge/Made%20in-Senegal%20🇸🇳-green.svg)](https://www.senegal.sn/)
+
+[![LangChain](https://img.shields.io/badge/LangChain-0.19+-blue.svg)](https://rubygems.org/gems/langchainrb)
+[![Listen](https://img.shields.io/badge/Listen-3.9+-orange.svg)](https://rubygems.org/gems/listen)
+[![Thor](https://img.shields.io/badge/Thor-1.4+-red.svg)](https://rubygems.org/gems/thor)
+[![TTY::Prompt](https://img.shields.io/badge/TTY::Prompt-0.23+-purple.svg)](https://rubygems.org/gems/tty-prompt)
 
 **Automatisez la génération, mise à jour et exécution de tests Rails avec l'Intelligence Artificielle**
 
@@ -78,6 +84,38 @@ Ce script :
 - Extrait automatiquement le pourcentage de couverture depuis SimpleCov
 - Met à jour le badge avec la couleur appropriée (rouge < 50%, orange < 70%, jaune < 80%, vert foncé < 90%, vert >= 90%)
 - Met à jour le tableau de couverture avec le nouveau pourcentage
+
+### Maintenance des badges de dépendances
+
+Un autre script utilitaire vérifie les versions des dépendances principales :
+
+```bash
+# Vérifier les versions des dépendances
+./bin/check_dependencies
+```
+
+Ce script :
+- Vérifie les dernières versions disponibles sur RubyGems
+- Compare avec les versions configurées dans le gemspec
+- Suggère les mises à jour nécessaires pour les badges
+- Recommande les actions à prendre
+
+> **💡 Note** : Les badges de dépendances sont automatiquement mis à jour pour refléter les dernières versions compatibles disponibles. Exécutez `./bin/check_dependencies` régulièrement pour maintenir vos badges à jour.
+
+### Mise à jour complète (script maître)
+
+Pour une maintenance complète en une seule commande :
+
+```bash
+# Mettre à jour tous les badges et vérifier les dépendances
+./bin/update_all_badges
+```
+
+Ce script maître :
+- Exécute la mise à jour du badge de couverture
+- Vérifie les versions des dépendances
+- Fournit un rapport complet avec les actions recommandées
+- Guide pour les prochaines étapes de maintenance
 
 ### Objectifs de couverture
 
@@ -449,6 +487,13 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE.txt](LICENSE.txt) pour 
 - [Thor](https://github.com/rails/thor) pour la CLI
 - [SimpleCov](https://github.com/simplecov-ruby/simplecov) pour la couverture
 - La communauté Ruby/Rails pour l'inspiration
+
+## 🇸🇳 À propos
+
+Ce projet a été développé au **Sénégal** 🇸🇳 avec pour mission d'améliorer la productivité des développeurs Ruby/Rails en automatisant l'écriture de tests grâce à l'intelligence artificielle.
+
+**Auteur** : Mohamed Camara GUEYE - Développeur passionné basé au Sénégal  
+**Vision** : Démocratiser l'utilisation de l'IA dans le développement logiciel pour la communauté africaine et mondiale
 
 ---
 

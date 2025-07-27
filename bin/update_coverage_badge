@@ -53,8 +53,8 @@ def update_readme_badge(percentage)
 
   content = File.read(readme_path)
   
-  # Pattern pour trouver le badge de couverture
-  badge_pattern = /\[\!\[Coverage Status\]\(https:\/\/img\.shields\.io\/badge\/coverage-[\d.]+%25-[a-z]+\.svg\)\]/
+  # Pattern plus spécifique pour trouver uniquement le badge de couverture
+  badge_pattern = /\[\!\[Coverage Status\]\(https:\/\/img\.shields\.io\/badge\/coverage-[\d.]+%25-[a-z]+\.svg\)\]\(coverage\/index\.html\)/
   
   # Déterminer la couleur selon le pourcentage
   color = case percentage
@@ -65,16 +65,17 @@ def update_readme_badge(percentage)
           else 'green'
           end
   
-  # Nouveau badge
+  # Nouveau badge avec le lien correct
   new_badge = "[![Coverage Status](https://img.shields.io/badge/coverage-#{percentage}%25-#{color}.svg)](coverage/index.html)"
   
   if content.match?(badge_pattern)
-    # Remplacer le badge existant
+    # Remplacer uniquement le badge de couverture
     updated_content = content.gsub(badge_pattern, new_badge)
     File.write(readme_path, updated_content)
     puts "✅ Badge de couverture mis à jour: #{percentage}%"
   else
     puts "❌ Badge de couverture non trouvé dans le README"
+    puts "🔍 Pattern recherché: #{badge_pattern}"
     exit 1
   end
 end

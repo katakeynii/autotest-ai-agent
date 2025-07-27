@@ -1,0 +1,93 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Script pour vérifier les versions des dépendances principales
+
+require 'json'
+require 'net/http'
+require 'uri'
+
+MAIN_DEPENDENCIES = {
+  'langchainrb' => '~> 0.6',
+  'listen' => '~> 3.8', 
+  'thor' => '~> 1.2',
+  'tty-prompt' => '~> 0.23'
+}.freeze
+
+def fetch_latest_version(gem_name)
+  uri = URI("https://rubygems.org/api/v1/gems/#{gem_name}.json")
+  response = Net::HTTP.get_response(uri)
+  
+  if response.code == '200'
+    data = JSON.parse(response.body)
+    data['version']
+  else
+    nil
+  end
+rescue => e
+  puts "❌ Erreur lors de la récupération de #{gem_name}: #{e.message}"
+  nil
+end
+
+def extract_version_from_constraint(constraint)
+  constraint.gsub(/[~><=\s]/, '')
+end
+
+def compare_versions(current, latest)
+  current_parts = current.split('.').map(&:to_i)
+  latest_parts = latest.split('.').map(&:to_i)
+  
+  # Assurer qu'on a au moins 3 parties (major.minor.patch)
+  current_parts += [0] * (3 - current_parts.length) if current_parts.length < 3
+  latest_parts += [0] * (3 - latest_parts.length) if latest_parts.length < 3
+  
+  # Comparer version majeure.mineure
+  current_major_minor = current_parts[0..1]
+  latest_major_minor = latest_parts[0..1]
+  
+  if latest_major_minor[0] > current_major_minor[0] || 
+     (latest_major_minor[0] == current_major_minor[0] && latest_major_minor[1] > current_major_minor[1])
+    :major_update
+  elsif latest_parts[0] > current_parts[0] || 
+        (latest_parts[0] == current_parts[0] && latest_parts[1] > current_parts[1]) ||
+        (latest_parts[0] == current_parts[0] && latest_parts[1] == current_parts[1] && latest_parts[2] > current_parts[2])
+    :minor_update  
+  else
+    :up_to_date
+  end
+end
+
+def suggest_badge_update(gem_name, current_constraint, latest_version)
+  current_version = extract_version_from_constraint(current_constraint)
+  status = compare_versions(current_version, latest_version)
+  
+  case status
+  when :major_update
+    puts "🚀 #{gem_name}: Mise à jour majeure disponible #{current_constraint} → ~> #{latest_version.split('.')[0..1].join('.')}"
+    puts "   Suggestion: Mettre à jour le badge vers #{latest_version.split('.')[0..1].join('.')}+"
+  when :minor_update
+    puts "📦 #{gem_name}: Mise à jour mineure disponible #{current_constraint} → #{latest_version}"
+  when :up_to_date
+    puts "✅ #{gem_name}: À jour (#{current_constraint})"
+  end
+end
+
+puts "🔍 Vérification des dépendances principales...\n"
+
+MAIN_DEPENDENCIES.each do |gem_name, constraint|
+  print "Vérification de #{gem_name}... "
+  
+  latest_version = fetch_latest_version(gem_name)
+  
+  if latest_version
+    puts "✓"
+    suggest_badge_update(gem_name, constraint, latest_version)
+  else
+    puts "❌"
+  end
+  
+  puts
+end
+
+puts "\n📝 Pour mettre à jour les badges dans le README, modifiez les versions dans les URLs des badges."
+puts "💡 N'oubliez pas de tester après les mises à jour de dépendances avec 'bundle update'." 
