@@ -52,88 +52,6 @@ Ou installez directement :
 $ gem install autotest-ia
 ```
 
-## 📊 Couverture des tests
-
-Ce projet maintient une couverture de tests élevée grâce à SimpleCov. La couverture actuelle est de **91.04%**.
-
-### Consulter le rapport de couverture
-
-Après avoir exécuté les tests, vous pouvez consulter le rapport détaillé :
-
-```bash
-# Exécuter les tests avec couverture
-bundle exec rspec
-
-# Ouvrir le rapport HTML (macOS)
-open coverage/index.html
-
-# Ouvrir le rapport HTML (Linux)
-xdg-open coverage/index.html
-```
-
-### Configuration de la couverture
-
-La configuration SimpleCov est définie dans `spec/spec_helper.rb` avec :
-- Seuil minimum de couverture : **80%**
-- Seuil minimum par fichier : **70%**
-- Exclusions : répertoires `spec/`, `vendor/`, `bin/`, etc.
-- Groupement par modules pour une analyse claire
-
-### Mise à jour automatique du badge
-
-Un script utilitaire permet de mettre à jour automatiquement le badge de couverture dans le README :
-
-```bash
-# Après exécution des tests
-./bin/update_coverage_badge
-```
-
-Ce script :
-- Extrait automatiquement le pourcentage de couverture depuis SimpleCov
-- Met à jour le badge avec la couleur appropriée (rouge < 50%, orange < 70%, jaune < 80%, vert foncé < 90%, vert >= 90%)
-- Met à jour le tableau de couverture avec le nouveau pourcentage
-
-### Maintenance des badges de dépendances
-
-Un autre script utilitaire vérifie les versions des dépendances principales :
-
-```bash
-# Vérifier les versions des dépendances
-./bin/check_dependencies
-```
-
-Ce script :
-- Vérifie les dernières versions disponibles sur RubyGems
-- Compare avec les versions configurées dans le gemspec
-- Suggère les mises à jour nécessaires pour les badges
-- Recommande les actions à prendre
-
-> **💡 Note** : Les badges de dépendances sont automatiquement mis à jour pour refléter les dernières versions compatibles disponibles. Exécutez `./bin/check_dependencies` régulièrement pour maintenir vos badges à jour.
-
-### Mise à jour complète (script maître)
-
-Pour une maintenance complète en une seule commande :
-
-```bash
-# Mettre à jour tous les badges et vérifier les dépendances
-./bin/update_all_badges
-```
-
-Ce script maître :
-- Exécute la mise à jour du badge de couverture
-- Vérifie les versions des dépendances
-- Fournit un rapport complet avec les actions recommandées
-- Guide pour les prochaines étapes de maintenance
-
-### Objectifs de couverture
-
-| Composant          | Couverture cible | Status       |
-| ------------------ | ---------------- | ------------ |
-| Modèles principaux | > 95%            | ✅            |
-| CLI et interfaces  | > 85%            | ✅            |
-| Utilitaires        | > 90%            | ✅            |
-| **Global**         | **> 90%**        | **✅ 91.04%** |
-
 ## ⚙️ Configuration initiale
 
 ### 1. Initialisation dans votre projet
@@ -483,6 +401,88 @@ cd autotest-ia
 bundle install
 bundle exec rake spec
 ```
+
+## 📊 Couverture des tests
+
+Ce projet maintient une couverture de tests élevée grâce à SimpleCov. La couverture actuelle est de **91.04%**.
+
+### Consulter le rapport de couverture
+
+Après avoir exécuté les tests, vous pouvez consulter le rapport détaillé :
+
+```bash
+# Exécuter les tests avec couverture
+bundle exec rspec
+
+# Ouvrir le rapport HTML (macOS)
+open coverage/index.html
+
+# Ouvrir le rapport HTML (Linux)
+xdg-open coverage/index.html
+```
+
+### Configuration de la couverture
+
+La configuration SimpleCov est définie dans `spec/spec_helper.rb` avec :
+- Seuil minimum de couverture : **80%**
+- Seuil minimum par fichier : **70%**
+- Exclusions : répertoires `spec/`, `vendor/`, `bin/`, etc.
+- Groupement par modules pour une analyse claire
+
+### Mise à jour automatique du badge
+
+Un script utilitaire permet de mettre à jour automatiquement le badge de couverture dans le README :
+
+```bash
+# Après exécution des tests
+./bin/update_coverage_badge
+```
+
+Ce script :
+- Extrait automatiquement le pourcentage de couverture depuis SimpleCov
+- Met à jour le badge avec la couleur appropriée (rouge < 50%, orange < 70%, jaune < 80%, vert foncé < 90%, vert >= 90%)
+- Met à jour le tableau de couverture avec le nouveau pourcentage
+
+### Maintenance des badges de dépendances
+
+Un autre script utilitaire vérifie les versions des dépendances principales :
+
+```bash
+# Vérifier les versions des dépendances
+./bin/check_dependencies
+```
+
+Ce script :
+- Vérifie les dernières versions disponibles sur RubyGems
+- Compare avec les versions configurées dans le gemspec
+- Suggère les mises à jour nécessaires pour les badges
+- Recommande les actions à prendre
+
+> **💡 Note** : Les badges de dépendances sont automatiquement mis à jour pour refléter les dernières versions compatibles disponibles. Exécutez `./bin/check_dependencies` régulièrement pour maintenir vos badges à jour.
+
+### Mise à jour complète (script maître)
+
+Pour une maintenance complète en une seule commande :
+
+```bash
+# Mettre à jour tous les badges et vérifier les dépendances
+./bin/update_all_badges
+```
+
+Ce script maître :
+- Exécute la mise à jour du badge de couverture
+- Vérifie les versions des dépendances
+- Fournit un rapport complet avec les actions recommandées
+- Guide pour les prochaines étapes de maintenance
+
+### Objectifs de couverture
+
+| Composant          | Couverture cible | Status       |
+| ------------------ | ---------------- | ------------ |
+| Modèles principaux | > 95%            | ✅            |
+| CLI et interfaces  | > 85%            | ✅            |
+| Utilitaires        | > 90%            | ✅            |
+| **Global**         | **> 90%**        | **✅ 91.04%** |
 
 ## 📄 Licence
 
